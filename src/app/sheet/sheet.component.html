@@ -1,0 +1,7 @@
+<div class="sheet">
+  <h1 class="sheet sheet__title">{{ sheet.title }}</h1>
+  <app-section
+    *ngFor="let id of sheet.sections"
+    [id]="id"
+  ></app-section>
+</div>
