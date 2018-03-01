@@ -1,6 +1,6 @@
 # project-candlelight
 
-> Project Candlelight is a customizable spellbook for quick and compact reference, tailored for D&D 5e
+> Project Candlelight is a compact spell sheet for quick and easy reference, tailored for D&D 5e
 
 ## Usage
 
