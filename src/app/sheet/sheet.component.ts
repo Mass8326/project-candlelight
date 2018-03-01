@@ -10,7 +10,7 @@ import { StoreService } from '../store.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class SheetComponent implements OnInit {
-  // Declarations
+  // Instance variables
   public sheet:Sheet;
   // Dependency injection
   public constructor ( private storeService:StoreService ) { }

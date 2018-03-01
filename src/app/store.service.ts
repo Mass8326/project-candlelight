@@ -8,7 +8,7 @@ import data from './data-example';
 
 @Injectable()
 export class StoreService {
-  // Declarations
+  // Instance variables
   private store:Store;
   // Initialization
   public constructor () {

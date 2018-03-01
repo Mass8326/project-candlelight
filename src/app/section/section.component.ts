@@ -10,15 +10,14 @@ import { StoreService } from '../store.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class SectionComponent implements OnInit {
-  // Declarations
-  @Input()
-  private id:string;
+  // Instance variables
+  @Input() id:string;
   private expand:boolean;
   public section:Section;
   // Dependency injection
-  public constructor( private storeService:StoreService ) { }
+  public constructor ( private storeService:StoreService ) { }
   // Initialization
-  public ngOnInit() : void {
+  public ngOnInit () : void {
     this.section = this.storeService.getSection(this.id);
     this.expand = true;
   }
@@ -26,7 +25,7 @@ export class SectionComponent implements OnInit {
   public getExpand () : boolean {
     return this.expand;
   }
-  public toggleExpand() : void {
+  public toggleExpand () : void {
     this.expand = !this.expand;
   }
 }

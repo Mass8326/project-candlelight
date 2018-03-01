@@ -10,9 +10,8 @@ import { StoreService } from '../store.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class SpellComponent implements OnInit {
-  // Declarations
-  @Input()
-  private id:string;
+  // Instance variables
+  @Input() id:string;
   private expand:boolean;
   public spell:Spell;
   // Dependency injection
