@@ -7,8 +7,8 @@
   </h2>
   <ul *ngIf="getExpand()">
     <app-spell
-      *ngFor="let id of section.spells"
-      [id]="id"
+      *ngFor="let e of section.spells; index as i"
+      [(spell)]="section.spells[i]"
     ></app-spell>
   </ul>
 </div>

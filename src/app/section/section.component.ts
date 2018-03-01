@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 import { Section } from './section';
-import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-section',
@@ -11,14 +10,13 @@ import { StoreService } from '../store.service';
 })
 export class SectionComponent implements OnInit {
   // Instance variables
-  @Input() id:string;
+  @Input() section:Section;
+  @Output() sectionChange = new EventEmitter<Section>();
   private expand:boolean;
-  public section:Section;
   // Dependency injection
-  public constructor ( private storeService:StoreService ) { }
+  public constructor () { }
   // Initialization
   public ngOnInit () : void {
-    this.section = this.storeService.getSection(this.id);
     this.expand = true;
   }
   // Getters and setters

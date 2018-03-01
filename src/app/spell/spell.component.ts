@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 import { Spell } from './spell';
-import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-spell',
@@ -11,14 +10,13 @@ import { StoreService } from '../store.service';
 })
 export class SpellComponent implements OnInit {
   // Instance variables
-  @Input() id:string;
+  @Input() spell:Spell;
+  @Output() spellChange = new EventEmitter<Spell>();
   private expand:boolean;
-  public spell:Spell;
   // Dependency injection
-  public constructor ( private storeService:StoreService ) { }
+  public constructor () { }
   // Initialization
   public ngOnInit () : void {
-    this.spell = this.storeService.getSpell(this.id);
     this.expand = false;
   }
   // Getters and setters
