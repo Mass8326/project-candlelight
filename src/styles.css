@@ -43,6 +43,14 @@ p {
   font-size: 2rem;
   margin: auto;
 }
+.sheet__title {
+  display: inline-block;
+}
+.sheet__controls {
+  height: 2em;
+  display: inline-block;
+  float: right;
+}
 
 /* Groups */
 .section__heading {

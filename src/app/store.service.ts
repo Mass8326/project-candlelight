@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Store } from './store';
-import data from './data-example';
+import { Sheet } from './sheet/sheet';
+import dataExample from './data-example';
 
 @Injectable()
 export class StoreService {
@@ -9,10 +10,16 @@ export class StoreService {
   private store:Store;
   // Initialization
   public constructor () {
-    this.store = Object.assign({}, data);
+    this.setData(dataExample);
   }
   // Getters and setters
   public getSheet () : Sheet {
     return this.store.sheet;
+  }
+  public getData () : Store {
+    return this.store;
+  }
+  public setData (data:Store) : void {
+    this.store = data;
   }
 }
