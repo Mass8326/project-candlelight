@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Store } from './store';
 import { Sheet } from './sheet/sheet';
-import dataExample from './data-example';
+import * as Sample from './sample.candle.json';
 
 @Injectable()
 export class StoreService {
@@ -10,7 +10,7 @@ export class StoreService {
   private store:Store;
   // Initialization
   public constructor () {
-    this.setData(dataExample);
+    this.setData(Sample as any as Store);
   }
   // Getters and setters
   public getSheet () : Sheet {
@@ -19,7 +19,10 @@ export class StoreService {
   public getData () : Store {
     return this.store;
   }
-  public setData (data:Store) : void {
-    this.store = data;
+  public setData (data:Store|string) : void {
+    if (typeof data === 'string') {
+      data = JSON.parse(data);
+    }
+    this.store = data as any as Store;
   }
 }

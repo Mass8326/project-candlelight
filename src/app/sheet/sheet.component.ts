@@ -57,7 +57,7 @@ export class SheetComponent implements OnInit {
         // What do do when a file is read
         reader.onload = ((e) => {
           let target = e.target as FileReader;
-          this.storeService.setData(JSON.parse(target.result));
+          this.storeService.setData(target.result);
           this.sheet = this.storeService.getSheet();
         });
         // Read file
