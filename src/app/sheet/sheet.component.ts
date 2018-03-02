@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { Store } from "../store";
-import { Sheet } from "./sheet";
+import { Store } from '../store';
+import { Sheet } from './sheet';
 import { StoreService } from '../store.service';
 
 @Component({
@@ -22,30 +22,28 @@ export class SheetComponent implements OnInit {
   // Event handlers
   public triggerExport () : void {
     // Parse store into embedded json
-    let fileName:string = this.sheet.title
+    const fileName:string = this.sheet.title
       .replace(/[\W_]/g, '')                        // remove non alphanumerics
       .toLowerCase() + '.'                          // lowercase and separator
       + Math.round((new Date()).getTime() / 1000)   // unix time
       + '.candle.json';                             // extension
-    let dataRaw:Store = this.storeService.getData();
-    let dataStr:string = JSON.stringify(dataRaw);
-    let dataUri:string = 'data:application/json;charset=utf-8,'
+    const dataRaw:Store = this.storeService.getData();
+    const dataStr:string = JSON.stringify(dataRaw);
+    const dataUri:string = 'data:application/json;charset=utf-8,'
       + encodeURIComponent(dataStr);
     // Create, click, and remove temporary anchor element
-    let elem:HTMLAnchorElement = document.createElement('a');
+    const elem:HTMLAnchorElement = document.createElement('a');
     elem.setAttribute('href', dataUri);
     elem.setAttribute('download', fileName);
     elem.click();
     elem.remove();
   }
   public triggerImport () : void {
-    // Create temporary input element
-    let elem:HTMLInputElement;
     // Remove any hanging temporary elements
-    elem = document.getElementById("import-proxy") as HTMLInputElement;
-    if (elem) { elem.remove(); }
+    const old = document.getElementById('import-proxy') as HTMLInputElement;
+    if (old) { old.remove(); }
     // Create and click temporary file
-    elem = document.createElement('input');
+    const elem = document.createElement('input');
     elem.setAttribute('type', 'file');
     elem.setAttribute('accept', '.candle.json');
     elem.click();
@@ -53,10 +51,10 @@ export class SheetComponent implements OnInit {
     elem.onchange = (() => {
       if (elem.files.length > 0) {
         // New file reader
-        let reader = new FileReader();
+        const reader = new FileReader();
         // What do do when a file is read
         reader.onload = ((e) => {
-          let target = e.target as FileReader;
+          const target = e.target as FileReader;
           this.storeService.setData(target.result);
           this.sheet = this.storeService.getSheet();
         });

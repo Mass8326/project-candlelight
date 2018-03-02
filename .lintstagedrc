@@ -1,0 +1,5 @@
+{
+  "linters": {
+    "*.ts": "tslint -p ./ -c .tslint.json"
+  }
+}

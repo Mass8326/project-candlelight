@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "ng serve",
     "start": "npm run dev",
-    "build": "ng build --prod"
+    "build": "ng build --prod",
+    "lint": "tslint -p ./ -c .tslint.json",
+    "lint-staged": "lint-staged"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +29,10 @@
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/node": "^9.4.6",
+    "codelyzer": "^4.2.1",
+    "husky": "^0.15.0-rc.8",
+    "lint-staged": "^7.0.0",
+    "tslint": "^5.9.1",
     "typescript": "~2.5.3"
   }
 }
