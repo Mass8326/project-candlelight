@@ -1,15 +1,13 @@
-<div class="sheet">
-  <h1 class="sheet sheet__title">{{ sheet.title }}</h1>
-  <div class="sheet sheet__controls">
-    <img class="button" src="./assets/button.export.svg" alt="[Export]"
-      (click)="onExport()"
-    />
-    <img class="button" src="./assets/button.import.svg" alt="[Import]"
-      (click)="onImport()"
-    />
-  </div>
-  <app-section
-    *ngFor="let el of sheet.sections; index as i"
-    [(section)]="sheet.sections[i]"
-  ></app-section>
+<h1 class="sheet__title">{{ sheet.title }}</h1>
+<div class="sheet__controls">
+  <img class="button" src="./assets/button.export.svg" alt="[Export]"
+    (click)="onExport()"
+  />
+  <img class="button" src="./assets/button.import.svg" alt="[Import]"
+    (click)="onImport()"
+  />
 </div>
+<app-section class="section"
+  *ngFor="let el of sheet.sections; index as i"
+  [(section)]="sheet.sections[i]"
+></app-section>

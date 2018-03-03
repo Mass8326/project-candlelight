@@ -1,27 +1,25 @@
-<li class="spell">
-  <div class="spell spell__label"
-    (click)="expanded = !expanded"
-  >
-    <span class="spell spell__name">{{ spell.name }}</span>
-    <span class="spell spell__memo" *ngIf="spell.memo">({{ spell.memo }})</span>
+<div class="spell__label"
+  (click)="expanded = !expanded"
+>
+  <span class="spell__name">{{ spell.name }}</span>
+  <span class="spell__memo" *ngIf="spell.memo">({{ spell.memo }})</span>
+</div>
+<div class="spell__controls">
+  <img class="button" src="./assets/button.edit.svg" alt="[Edit]"
+    (click)="onEdit()"
+  />
+</div>
+<div class="spell__expand" *ngIf="expanded">
+  <div class="spell__info">
+    <p
+      *ngFor="let paragraph of spell.info"
+      [innerHTML]="paragraph"
+    ></p>
   </div>
-  <div class="spell spell__controls">
-    <img class="button" src="./assets/button.edit.svg" alt="[Edit]"
-      (click)="onEdit()"
-    />
+  <div class="spell__desc">
+    <p
+      *ngFor="let paragraph of spell.desc"
+      [innerHTML]="paragraph"
+    ></p>
   </div>
-  <div class="spell spell__expand" *ngIf="expanded">
-    <div class="spell spell__info">
-      <p
-        *ngFor="let paragraph of spell.info"
-        [innerHTML]="paragraph"
-      ></p>
-    </div>
-    <div class="spell spell__desc">
-      <p
-        *ngFor="let paragraph of spell.desc"
-        [innerHTML]="paragraph"
-      ></p>
-    </div>
-  </div>
-</li>
+</div>

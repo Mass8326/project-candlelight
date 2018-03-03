@@ -1,14 +1,11 @@
-<div class="section">
-  <h2
-    class="section section__heading"
-    (click)="expanded = !expanded"
-  >
-    {{ section.heading }}
-  </h2>
-  <ul *ngIf="expanded">
-    <app-spell
-      *ngFor="let e of section.spells; index as i"
-      [(spell)]="section.spells[i]"
-    ></app-spell>
-  </ul>
-</div>
+<h2 class="section__heading"
+  (click)="expanded = !expanded"
+>
+  {{ section.heading }}
+</h2>
+<ul *ngIf="expanded">
+  <app-spell class="spell"
+    *ngFor="let e of section.spells; index as i"
+    [(spell)]="section.spells[i]"
+  ></app-spell>
+</ul>

@@ -35,7 +35,8 @@ p {
 }
 
 /* Sheet */
-.main {
+.sheet {
+  display: block;
   background-color: #FFF;
   max-width: 40em;
   width: 100%;
@@ -52,7 +53,10 @@ p {
   float: right;
 }
 
-/* Groups */
+/* Sections */
+.section {
+  display: block;
+}
 .section__heading {
   cursor: pointer;
   display: inline-block;
@@ -61,7 +65,10 @@ p {
   color: #777;
 }
 
-/* Entries */
+/* Spells */
+.spell {
+  display: list-item;
+}
 .spell__label {
   cursor: pointer;
   display: inline-block;
