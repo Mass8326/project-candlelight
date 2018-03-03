@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import * as YAML from 'yamljs';
 
 import { Store } from './store';
 import { Sheet } from './sheet/sheet';
-import * as Sample from './sample.candle.json';
+import * as sample from 'raw-loader!./sample.candle.yaml';
 
 @Injectable()
 export class StoreService {
@@ -10,7 +11,7 @@ export class StoreService {
   private store:Store;
   // Initialization
   public constructor () {
-    this.setData(Sample as any as Store);
+    this.setData(sample as any as string, 'yaml');
   }
   // Getters and setters
   public getSheet () : Sheet {
@@ -19,10 +20,27 @@ export class StoreService {
   public getData () : Store {
     return this.store;
   }
-  public setData (data:Store|string) : void {
-    if (typeof data === 'string') {
-      data = JSON.parse(data);
+  public setData (data:string, filename:string) : void {
+    // Detect file extension
+    let ext:string;
+    const results = (/\.(\w+)$/gi).exec(filename);
+    if (results && results[1])
+      { ext = results[1]; }
+    else
+      { ext = filename; }
+    let parsed:Store;
+    // Parse according to file extension
+    if (ext === 'json')
+      { parsed = JSON.parse(data); }
+    else if (ext === 'yaml' || ext === 'yml')
+      { parsed = YAML.parse(data); }
+    else
+      { parsed = data as any as Store; }
+    try { this.store = parsed; }
+    catch (e) {
+      console.log(e);
+      alert('An error has occured when updating data.'
+        + 'Is the proper file extension being used?');
     }
-    this.store = data as any as Store;
   }
 }
