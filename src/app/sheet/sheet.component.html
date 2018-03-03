@@ -2,10 +2,10 @@
   <h1 class="sheet sheet__title">{{ sheet.title }}</h1>
   <div class="sheet sheet__controls">
     <img class="button" src="./assets/button.export.svg" alt="[Export]"
-      (click)="triggerExport()"
+      (click)="onExport()"
     />
     <img class="button" src="./assets/button.import.svg" alt="[Import]"
-      (click)="triggerImport()"
+      (click)="onImport()"
     />
   </div>
   <app-section

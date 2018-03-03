@@ -7,9 +7,9 @@
     not at runtime, but to help describe things at compilation.
   https://basarat.gitbooks.io/typescript/docs/types/ambient/d.ts.html
   As TypeScript recognizes .ts files only, it conflicts with Node's ability
-    to import/require all file types. For exampl,e require('data.json') would
-    be interpreted as require('data.json.ts') and likely throw error. Wildcard
-    module declarations can reconcile this.
+    to import/require all file types. For example, require('data.json') would
+    be interpreted as needing 'data.json.ts' and is likely to throw error.
+    Wildcard module declarations can reconcile this.
   https://www.typescriptlang.org/docs/handbook/modules.html
     #wildcard-module-declarations
 */

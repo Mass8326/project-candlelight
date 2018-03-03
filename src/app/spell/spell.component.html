@@ -1,16 +1,16 @@
 <li class="spell">
   <div class="spell spell__label"
-    (click)="toggleExpand()"
+    (click)="expanded = !expanded"
   >
     <span class="spell spell__name">{{ spell.name }}</span>
     <span class="spell spell__memo" *ngIf="spell.memo">({{ spell.memo }})</span>
   </div>
   <div class="spell spell__controls">
     <img class="button" src="./assets/button.edit.svg" alt="[Edit]"
-      (click)="triggerEdit()"
+      (click)="onEdit()"
     />
   </div>
-  <div class="spell spell__expand" *ngIf="getExpand()">
+  <div class="spell spell__expand" *ngIf="expanded">
     <div class="spell spell__info">
       <p
         *ngFor="let paragraph of spell.info"
