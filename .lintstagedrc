@@ -1,6 +1,0 @@
-{
-  "linters": {
-    "*.ts": "tslint -p ./ -c .tslint.json",
-    "*.{png,jpeg,jpg,gif,svg}": [ "imagemin-lint-staged", "git add" ]
-  }
-}
