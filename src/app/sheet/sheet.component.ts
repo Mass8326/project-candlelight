@@ -11,7 +11,7 @@ import { StoreService } from '../store.service';
 export class SheetComponent implements OnInit {
   // Instance variables
   public sheet:Sheet;
-  public mode = 'none';
+  public mode = 'welcome';
   // Dependency injection
   public constructor ( private storeService:StoreService ) { }
   // Initialization

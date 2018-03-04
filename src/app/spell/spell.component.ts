@@ -17,6 +17,8 @@ export class SpellComponent implements OnInit {
   public ngOnInit () : void { }
   // Event handlers
   public onEdit () : void {
-    alert('Placeholder - ' + this.spell.name);
+    alert('In-app editing is not yet implemented.\n\n'
+    + 'Please export, edit, then import your data using the buttons at '
+    + 'the top right of the sheet.');
   }
 }

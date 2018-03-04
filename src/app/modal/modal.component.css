@@ -4,7 +4,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #0009;
+  background: #000;
+  opacity: .5;
 }
 
 .modal__window {

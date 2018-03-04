@@ -33,3 +33,32 @@
     <button type="submit" class="modal__submit">Export</button>
   </form>
 </div>
+<!-- Warn mode -->
+<div class="modal__window"
+    *ngIf="isMode('welcome')">
+  <h1 class="modal__title">Project Candlelight</h1>
+  <div class="modal__controls">
+    <img class="button" src="./assets/button.close.svg" alt="[Close]"
+        (click)="setMode('none')"/>
+  </div>
+  <p style="font-weight: bold;">
+    !!! Warning: this app is still in early development !!!
+  </p>
+  <p style="font-weight: bold;">
+    Exported files may not be compatible with future versions without
+    manual conversion.
+  </p>
+  <p>
+    We hope to provide an easy to use spell sheet for quick reference, all
+    on a single page.
+  </p>
+  <p>
+    At the moment, the only way to edit your spell sheet is to export data
+    and use your text editor of choice.
+  </p>
+  <p>
+    This software is provided as is. See our license,
+    third party licenses, and continuing development on
+    <a href="https://github.com/Mass8326/project-candlelight">GitHub</a>.
+  </p>
+</div>

@@ -1,80 +1,279 @@
----
-version: 1.0.0
+version: 0.0.0
 sheet:
-  title: Spell Sheet
+  title: Astral Point
   sections:
-  - heading: Cantrips
-    spells:
-    - name: Prestidigitation
-      memo: ''
-      info:
-      - Transmutation Cantrip
-      - 'Casting Time: 1 action'
-      - 'Range: 10 ft'
-      - 'Components: V, S'
-      - 'Duration: Up to 1 hour'
-      desc:
-      - 'This spell is a minor magical trick that novice spellcasters use for practice.
-        You create one of the following magical effects within range:'
-      - "- You create an instantaneous, harmless sensory effect, such as a shower
-        of sparks, a puff of wind, faint musical notes, or an odd odor."
-      - "- You instantaneously light or snuff out a candle, a torch, or a small campfire."
-      - "- You instantaneously clean or soil an object no larger than 1 cubic foot."
-      - "- You chill, warm, or flavor up to 1 cubic foot of nonliving material for
-        1 hour."
-      - "- You make a color, a small mark, or a symbol appear on an object or a surface
-        for 1 hour."
-      - "- You create a nonmagical trinket or an illusory image that can fit in your
-        hand and that lasts until the end of your next turn."
-      - If you cast this spell multiple times, you can have up to three of its non-instantaneous
-        effects active at a time, and you can dismiss such an effect as an action.
-    - name: Eldritch Blast
-      memo: 1d10 force
-      info:
-      - Evocation Cantrip
-      - 'Casting Time: 1 action'
-      - 'Range: 120 ft'
-      - 'Components: V, S'
-      - 'Duration: Instantaneous'
-      desc:
-      - A beam of crackling energy streaks toward a creature within range. Make a
-        ranged spell attack against the target. On a hit, the target takes 1d10 force
-        damage.
-      - 'The spell creates more than one beam when you reach higher levels: two beams
-        at 5th level, three beams at 11th level, and four beams at 17th level. You
-        can direct the beams at the same target or at different ones. Make a separate
-        attack roll for each beam.'
-  - heading: Level 1
-    spells:
-    - name: Charm Person
-      memo: Wis DC
-      info:
-      - 1st Level Enchantment
-      - 'Casting Time: 1 action'
-      - 'Range: 30 ft'
-      - 'Components: V, S'
-      - 'Duration: 1 hour'
-      desc:
-      - You attempt to charm a humanoid you can see within range. It must make a Wisdom
-        saving throw, and does so with advantage if you or your companions are fighting
-        it. If it fails it is charmed by you until the spell ends or until you or
-        your companions do something harmful to it. The charmed creature regards you
-        as a friendly acquaintance. When the spell ends it knows it has been charmed.
-      - At higher levels.<br>When you cast this spell using a spell slot of 2nd level
-        or higher, you can target one additional creature for each slot level above
-        1st.They must be within 30ft of each other when you target them.
-    - name: Detect Magic
-      memo: ''
-      info:
-      - 1st Level Divination
-      - 'Casting Time: 1 action'
-      - 'Range: self'
-      - 'Components: V, S'
-      - 'Duration: Concentration, 10 min'
-      desc:
-      - For the duration, you sense the presence of magic within 30 feet of you. If
-        you sense magic in this way, you can use your action to see a faint aura around
-        any visible creature or object in the area that bears magic, and you learn
-        its school of magic, if any.
-      - The spell can penetrate most barriers, but it is blocked by 1 foot of stone,
-        1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+    - heading: Cantrips
+      spells:
+        - name: Apprentice's Telekinesis
+          memo: Mage Hand
+          info:
+            - 'Conjuration  Cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: 30 feet'
+            - 'Components: V, S'
+            - 'Duration: 1 minute'
+          desc:
+            - 'A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.'
+            - 'You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.'
+            - 'The hand can’t attack, activate magic items, or carry more than 10 pounds.'
+        - name: Eldritch Blast
+          memo: 1d10 force
+          info:
+            - 'Evocation Cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: 120 ft'
+            - 'Components: V, S'
+            - 'Duration: Instantaneous'
+          desc:
+            - 'A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.'
+            - 'The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.'
+        - name: Friends
+          memo: 1 min
+          info:
+            - 'Enchantment Cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: Self'
+            - 'Components: S, M (a small amount of makeup applied to the face as this spell is cast)'
+            - 'Duration: Concentration, up to 1 minute'
+          desc:
+            - 'For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn’t hostile toward you. When the spell ends, the creature realizes that you have used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM’s discretion), depending on the nature of your interaction with it.'
+        - name: Mage Armor
+          memo: Magic Initiate
+          info:
+            - '1st Level Abjuration'
+            - 'Casting Time: 1 action'
+            - 'Range: Touch'
+            - 'Components: V, S, M (a piece of cured leather)'
+            - 'Duration: 8 hours'
+          desc:
+            - 'You touch a willing creature who isn’t wearing armor, and a protective magical force surrounds it until the spell ends. The target’s base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.'
+        - name: Message
+          info:
+            - 'Transmutation Cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: 120 feet'
+            - 'Components: V, S, M (a short piece of copper wire)'
+            - 'Duration: 1 round'
+          desc:
+            - 'You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.'
+            - 'You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn’t have to follow a straight line and can travel freely around corners or through openings.'
+        - name: Minor Illusion
+          info:
+            - 'Illusion cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: 30 feet'
+            - 'Components: S, M (a bit of fleece)'
+            - 'Duration: 1 minute'
+          desc:
+            - 'You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again.'
+            - 'If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.'
+            - 'If you create an image of an object – such as a chair, muddy footprints, or a small chest – it must be no larger than a 5-foot cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.'
+            - 'If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.'
+        - name: Prestidigitation
+          info:
+            - 'Transmutation Cantrip'
+            - 'Casting Time: 1 action'
+            - 'Range: 10 ft'
+            - 'Components: V, S'
+            - 'Duration: Up to 1 hour'
+          desc:
+            - 'This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range:'
+            - '- You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.'
+            - '- You instantaneously light or snuff out a candle, a torch, or a small campfire.'
+            - '- You instantaneously clean or soil an object no larger than 1 cubic foot.'
+            - '- You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.'
+            - '- You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.'
+            - '- You create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn.'
+            - 'If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.'
+    - heading: 'Level 1'
+      spells:
+        - name: Absorb Elements
+          info:
+            - '1st Level Abjuration'
+            - 'Casting Time: 1 reaction'
+            - 'Range: Self'
+            - 'Components: S'
+            - 'Duration: 1 hour'
+            - 'When you take acid, cold, fire, lightning, or thunder damage'
+          desc:
+            - 'The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.'
+            - 'At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.'
+        - name: Charm Person
+          memo: 1 hr, Wis DC
+          info:
+            - '1st Level Enchantment'
+            - 'Casting Time: 1 action'
+            - 'Range: 30 ft'
+            - 'Components: V, S'
+            - 'Duration: 1 hour'
+          desc:
+            - 'You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails it is charmed by you until the spell ends or until you or your companions do something harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends it knows it has been charmed.'
+            - 'At higher levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.They must be within 30ft of each other when you target them.'
+        - name: Disguise Self
+          memo: 1 hr
+          info:
+            - '1st Level Illusion'
+            - 'Casting Time: Self'
+            - 'Range: 30 ft'
+            - 'Components: V, S'
+            - 'Duration: 1 hour'
+          desc:
+            - 'You make yourself – including your clothing, armor, weapons, and other belongings on your person – look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can’t change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you.'
+            - 'The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing or would feel your head and hair. If you use this spell to appear thinner than you are, the hand of someone who reaches out to touch you would bump into you while it was seemingly still in midair.'
+            - 'To discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.'
+        - name: Ghoul Light
+          info:
+            - '1st Level Necromancy'
+            - 'Casting Time: 1 action'
+            - 'Range: Touch'
+            - 'Components: V, S, M (a bit of fat)'
+            - 'Duration: Concentration, up to 1 hour'
+          desc:
+            - 'Beta version: DC 10 Intelligence check on cast; failure and roll on wild magic table'
+            - 'A sickly green flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, except for its green hue, but it creates no heat and doesn’t use oxygen. Ghoul light can be covered and hidden, but not smothered or quenched.'
+            - 'All undead within 30 feet who can see the light gain advantage on saves against being turned.'
+            - 'Any source of magical darkness can dispel ghoul light.'
+        - name: Grease
+          memo: Dex DC
+          info:
+            - '1st Level Conjuration'
+            - 'Casting Time: 1 action'
+            - 'Range: 60 feet'
+            - 'Components: V, S, M (a bit of pork rind or butter)'
+            - 'Duration: 1 minute'
+          desc:
+            - 'Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.'
+            - 'When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.'
+        - name: Shield
+          memo: +5 AC
+          info:
+            - '1st Level Abjuration'
+            - 'Casting Time: 1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell'
+            - 'Range: Self'
+            - 'Components: V, S'
+            - 'Duration: 1 round'
+          desc:
+            - 'An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.'
+        - name: Sleep
+          info:
+            - '1st Level Enchantment'
+            - 'Casting Time: 1 action'
+            - 'Range: 90 feet'
+            - 'Components: V, S, M (a pinch of fine sand, rose petals, or a cricket)'
+            - 'Duration: 1 minute'
+          desc:
+            - 'This spell sends creatures into a magical slumber. Roll 5d8; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).'
+            - 'Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected.'
+            - 'Undead and creatures immune to being charmed aren’t affected by this spell.'
+            - 'At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.'
+        - name: Thunderwave
+          memo: Con DC
+          info:
+            - '1st Level Evocation'
+            - 'Casting Time: 1 action'
+            - 'Range: Self (15-foot cube)'
+            - 'Components: V, S'
+            - 'Duration: Instantaneous'
+          desc:
+            - 'A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn’t pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell’s effect, and the spell emits a thunderous boom audible out to 300 feet.'
+            - 'At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.'
+    - heading: 'Level 1, Rituals'
+      spells:
+        - name: Alarm
+          memo: 8 hr
+          info:
+            - '1st Level Abjuration (Ritual)'
+            - 'Casting Time: 1 minute'
+            - 'Range: 30 feet'
+            - 'Components: V, S, M (a tiny bell and a piece of fine silver wire)'
+            - 'Duration: 8 hours'
+          desc:
+            - 'You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.'
+            - 'A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.'
+            - 'An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.'
+        - name: 'Comprehend Languages'
+          info:
+            - '1st Level Divination (Ritual)'
+            - 'Casting Time: 1 action'
+            - 'Range: Self'
+            - 'Components: V, S, M (a pinch of soot and salt)'
+            - 'Duration: 1 hour'
+          desc:
+            - 'For the duration, you understand the literal meaning of any spoken language that you hear. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text.'
+            - 'This spell doesn’t decode secret messages in a text or a glyph, such as an arcane sigil, that isn’t part of a written language.'
+        - name: 'Detect Magic'
+          memo: 10 min, C
+          info:
+            - '1st Level Divination (Ritual)'
+            - 'Casting Time: 1 action'
+            - 'Range: Self'
+            - 'Components: V, S'
+            - 'Duration: Concentration, 10 min'
+          desc:
+            - 'For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.'
+            - 'The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.'
+        - name: 'Find Familiar'
+          info:
+            - '1st Level Conjuration (Ritual)'
+            - 'Casting Time: 1 hour'
+            - 'Range: 10 feet'
+            - 'Components: V, S, M (10gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier)'
+            - 'Duration: Instantaneous'
+          desc:
+            - 'You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.'
+            - 'Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal.'
+            - 'When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again.'
+            - 'While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses.'
+            - 'As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you.'
+            - 'You can’t have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature.'
+            - 'Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your action modifier for the roll.'
+        - name: 'Identify'
+          info:
+            - '1st Level Divination (Ritual)'
+            - 'Casting Time: 1 minute'
+            - 'Range: Touch'
+            - 'Components: V, S, M (a pearl worth at least 100 gp and an owl feather)'
+            - 'Duration: Instantaneous'
+          desc:
+            - 'You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it.'
+            - 'If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.'
+    - heading: 'Level 2'
+      spells:
+        - name: 'Phantasmal Force'
+          info:
+            - '2nd Level Illusion'
+            - 'Casting Time: 1 action'
+            - 'Range: 60 feet'
+            - 'Components: V, S, M (a bit of fleece)'
+            - 'Duration: Concentration, up to 1 minute'
+          desc:
+            - 'You craft an illusion that takes root in the mind of a creature that you can see within range. The target must make an Intelligence saving throw. On a failed save, you create a phantasmal object, creature, or other visible phenomenon of your choice that is no larger than a 10-foot cube and that is perceivable only to the target for the duration. This spell has no effect on undead or constructs.'
+            - 'The phantasm includes sound, temperature, and other stimuli, also evident only to the creature.'
+            - 'The target can use its action to examine the phantasm with an Intelligence (Investigation) check against your spell save DC. If the check succeeds, the target realizes that the phantasm is an illusion, and the spell ends.'
+            - 'While a target is affected by the spell, the target treats the phantasm as if it were real. The target rationalizes any illogical outcomes from interacting with the phantasm. For example, a target attempting to walk across a phantasmal bridge that spans a chasm falls once it steps onto the bridge. If the target survives the fall, it still believes that the bridge exists and comes up with some other explanation for its fall–it was pushed, it slipped, or a strong wind might have knocked it off.'
+            - 'An affected target is so convinced of the phantasm’s reality that it can even take damage from the illusion. A phantasm created to appear as a creature can attack the target. Similarly, a phantasm created to appear as fire, a pool of acid, or lava can burn the target. Each round on your turn, the phantasm can deal 1d6 psychic damage to the target if it is in the phantasm’s area or within 5 feet of the phantasm, provided that the illusion is of a creature or hazard that could logically deal damage, such as by attacking. The target perceives the damage as a type appropriate to the illusion.'
+        - name: 'Suggestion'
+          info:
+            - '2nd Level Enchantment'
+            - 'Casting Time: 1 action'
+            - 'Range: 30 feet'
+            - 'Components: V, M (a snake’s tongue and either a bit of honeycomb or a drop of sweet oil)'
+            - 'Concentration, up to 8 hours'
+          desc:
+            - 'You suggest a course of activity (limited to a sentence or two) and magically influence a creature you can see within range that can hear and understand you. Creatures that can’t be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act ends the spell.'
+            - 'The target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.'
+            - 'You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition isn’t met before the spell expires, the activity isn’t performed.'
+            - 'If you or any of your companions damage the target, the spell ends.'
+        - name: 'Web'
+          info:
+            - '2nd Level Conjuration'
+            - 'Casting Time: 1 action'
+            - 'Range: 60 feet'
+            - 'Components: V, S, M'
+            - 'Duration: 1 hour, concentration'
+          desc:
+            - 'You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.'
+            - 'If the webs aren''t anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.'
+            - 'Each creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the webs or until it breaks free.'
+            - 'A creature restrained by the webs can use its actions to make a Strength check against your spell save DC. If it succeeds, it is no longer restrained.'
+            - 'The webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.'
