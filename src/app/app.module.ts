@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { SheetComponent } from './sheet/sheet.component';
+import { ModalComponent } from './modal/modal.component';
 import { SectionComponent } from './section/section.component';
 import { SpellComponent } from './spell/spell.component';
 import { StoreService } from './store.service';
@@ -12,12 +14,14 @@ import { StoreService } from './store.service';
   // Define children such as modules, components, directives, and pipes
   declarations: [
     SheetComponent,
+    ModalComponent,
     SectionComponent,
     SpellComponent,
   ],
   // Angular modules
   imports: [
     BrowserModule,
+    FormsModule,
   ],
   // Service provider
   // Registers them in the dependency injector

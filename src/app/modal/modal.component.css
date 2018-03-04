@@ -1,0 +1,46 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0009;
+}
+
+.modal__window {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 5em;
+  max-width: 30em;
+  width: 90%;
+  padding: 1.5em;
+  margin: auto;
+  background-color: #FFF;
+  box-shadow: 0 0 1rem .5rem #0003;
+}
+
+.modal__title {
+  display: inline-block;
+}
+
+.modal__controls {
+  display: inline-block;
+  float: right;
+  height: 2em;
+}
+
+.modal__input {
+  font-size: 1em;
+  display: block;
+  padding: .25em;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.modal__submit {
+  font-size: 1.5em;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+}

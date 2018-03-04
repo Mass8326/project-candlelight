@@ -1,7 +1,7 @@
 <h1 class="sheet__title">{{ sheet.title }}</h1>
 <div class="sheet__controls">
   <img class="button" src="./assets/button.export.svg" alt="[Export]"
-    (click)="onExport()"
+    (click)="mode = 'export'"
   />
   <img class="button" src="./assets/button.import.svg" alt="[Import]"
     (click)="onImport()"
@@ -11,3 +11,4 @@
   *ngFor="let el of sheet.sections; index as i"
   [(section)]="sheet.sections[i]"
 ></app-section>
+<app-modal class="modal" [(mode)]="mode"><app-modal>

@@ -11,7 +11,7 @@ import { StoreService } from '../store.service';
 export class SheetComponent implements OnInit {
   // Instance variables
   public sheet:Sheet;
-  private prompt:Sheet;
+  public mode = 'none';
   // Dependency injection
   public constructor ( private storeService:StoreService ) { }
   // Initialization
@@ -19,24 +19,6 @@ export class SheetComponent implements OnInit {
     this.sheet = this.storeService.getSheet();
   }
   // Event handlers
-  public onExport () : void {
-    // Parse store into embedded json
-    const filename:string = this.sheet.title
-      .replace(/[\W_]/g, '')                        // remove non alphanumerics
-      .toLowerCase() + '.'                          // lowercase and separator
-      + Math.round((new Date()).getTime() / 1000)   // unix time
-      + '.candle.json';                             // extension
-    const dataRaw:Store = this.storeService.getData();
-    const dataStr:string = JSON.stringify(dataRaw);
-    const dataUri:string = 'data:application/json;charset=utf-8,'
-      + encodeURIComponent(dataStr);
-    // Create, click, and remove temporary anchor element
-    const elem = document.createElement('a');
-    elem.setAttribute('href', dataUri);
-    elem.setAttribute('download', filename);
-    elem.click();
-    elem.remove();
-  }
   public onImport () : void {
     // Remove any hanging temporary elements
     const old = document.getElementById('import-proxy');
