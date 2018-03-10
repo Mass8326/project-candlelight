@@ -1,0 +1,14 @@
+<form [formGroup]="searchForm"
+(ngSubmit)="onAdd()">
+  <input formControlName="input"
+  placeholder="Filter"
+  (input)="onSearch($event)">
+  <select formControlName="select">
+    <option value="">Select a spell...</option>
+    <option *ngFor="let spell of getSearchResults()"
+    [value]="spell.id"
+    >{{ spell.data.name }}</option>
+  </select>
+  <button type="submit"
+  [attr.disabled]="searchForm.status == 'INVALID' ? '' : null">Add</button>
+</form>

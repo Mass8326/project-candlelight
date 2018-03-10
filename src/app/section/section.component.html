@@ -8,4 +8,5 @@
     *ngFor="let e of section.spells; index as i"
     [(spell)]="section.spells[i]"
   ></app-spell>
+  <app-search [id]="section.id"></app-search>
 </ul>

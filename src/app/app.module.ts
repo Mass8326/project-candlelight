@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SheetComponent } from './sheet/sheet.component';
 import { ModalComponent } from './modal/modal.component';
+import { SearchComponent } from './search/search.component';
 import { SectionComponent } from './section/section.component';
 import { SpellComponent } from './spell/spell.component';
 import { StoreService } from './store.service';
@@ -15,6 +16,7 @@ import { StoreService } from './store.service';
   declarations: [
     SheetComponent,
     ModalComponent,
+    SearchComponent,
     SectionComponent,
     SpellComponent,
   ],
@@ -22,6 +24,7 @@ import { StoreService } from './store.service';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   // Service provider
   // Registers them in the dependency injector
