@@ -1,14 +1,19 @@
-<h1 class="sheet__title">{{ sheet.title }}</h1>
-<div class="sheet__controls">
-  <img class="button" src="./assets/button.export.svg" alt="[Export]"
+<div class="sheet__main">
+  <h1 class="sheet__title">{{ sheet.title }}</h1>
+  <div class="sheet__controls">
+    <img class="button" src="./assets/button.export.svg" alt="[Export]"
     (click)="mode = 'export'"
-  />
-  <img class="button" src="./assets/button.import.svg" alt="[Import]"
+    />
+    <img class="button" src="./assets/button.import.svg" alt="[Import]"
     (click)="onImport()"
-  />
-</div>
-<app-section class="section"
+    />
+  </div>
+  <app-section class="section"
   *ngFor="let el of sheet.sections; index as i"
   [(section)]="sheet.sections[i]"
-></app-section>
-<app-modal class="modal" [(mode)]="mode"><app-modal>
+  ></app-section>
+  <app-modal class="modal" [(mode)]="mode"></app-modal>
+</div>
+<div class="sheet__footer">
+  Icons used are from <a href="https://icons8.com/">Icons8</a>.
+</div>

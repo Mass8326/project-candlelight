@@ -1,6 +1,6 @@
 version: 0.0.0
 sheet:
-  title: Astral Point
+  title: Example Character
   sections:
     - heading: Cantrips
       spells:

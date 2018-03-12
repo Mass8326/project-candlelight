@@ -1,14 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import * as YAML from 'yamljs';
 import * as JsSearch from 'js-search';
 
 import { StoreService } from '../store.service';
-import * as spellRaw from 'raw-loader!../spells.json';
+import * as spellRaw from 'raw-loader!../spells.yaml';
 
 @Component({
   selector: 'app-search',
+  styleUrls: ['./search.component.css'],
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
   // Instance variables
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit {
   // Initialization
   public ngOnInit () : void {
     // Populate spellDictMap
-    JSON.parse(spellRaw).forEach((data) => {
+    YAML.parse(spellRaw).forEach((data) => {
       this.spellDictMap.set(this.genHash(8), data);
     });
     // Populate spellDictArr from spellDictMap

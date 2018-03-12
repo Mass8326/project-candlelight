@@ -1,0 +1,18 @@
+.sheet__main,
+.sheet__footer {
+  font-size: 1rem;
+  display: block;
+  background-color: #FFF;
+  max-width: 40em;
+  width: 100%;
+  padding: 1.5em;
+  margin: 1.5em auto;
+}
+.sheet__title {
+  display: inline-block;
+}
+.sheet__controls {
+  height: 2em;
+  display: inline-block;
+  float: right;
+}

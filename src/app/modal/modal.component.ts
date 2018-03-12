@@ -37,6 +37,13 @@ export class ModalComponent implements OnInit {
   public onExport () : void {
     // Get export information
     const dataRaw:Store = this.storeService.getData();
+    // Remove internal ids
+    dataRaw.sheet.sections.forEach((section) => {
+      section.spells.forEach((spell) => {
+        delete spell.id;
+      });
+      delete section.id;
+    });
     let filename:string = dataRaw.sheet.title
       .replace(/[\W_]/g, '')                        // remove non alphanumerics
       .toLowerCase() + '.'                          // lowercase and separator

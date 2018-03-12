@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { Section } from './section';
+import { Section } from '../store';
 
 @Component({
   selector: 'app-section',
+  styleUrls: ['./section.component.css'],
   templateUrl: './section.component.html',
 })
 export class SectionComponent implements OnInit {

@@ -1,12 +1,12 @@
 <h2 class="section__heading"
-  (click)="expanded = !expanded"
+(click)="expanded = !expanded"
 >
   {{ section.heading }}
 </h2>
 <ul *ngIf="expanded">
   <app-spell class="spell"
-    *ngFor="let e of section.spells; index as i"
-    [(spell)]="section.spells[i]"
+  *ngFor="let e of section.spells; index as i"
+  [(spell)]="section.spells[i]"
   ></app-spell>
   <app-search [id]="section.id"></app-search>
 </ul>

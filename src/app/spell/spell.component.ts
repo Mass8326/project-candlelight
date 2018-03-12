@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { Spell } from './spell';
+import { Spell } from '../store';
 
 @Component({
   selector: 'app-spell',
+  styleUrls: ['./spell.component.css'],
   templateUrl: './spell.component.html',
 })
 export class SpellComponent implements OnInit {

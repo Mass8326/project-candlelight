@@ -4,7 +4,27 @@
 
 ## Usage
 
-This project is currently a work in progress. The core planned features of exporting, importing, and editing of data are not yet implemented.
+In-app editing is currently in development. To edit your spell sheet, you must export it and use a text editor such as Notepad. Once done editing, you may import it back in.
+
+### Save File Structure
+
+```yaml
+version: "0.0.0"
+sheet:
+  title: "Example Character"
+  sections:
+    - heading: "Cantrips"
+      spells:
+        - name: "Prestidigitation"
+          memo: "Note to self here" # optional, leave empty quotes if none
+          info:
+            - "Conjuration  Cantrip"
+            - "Casting Time: 1 action"
+            - "..."
+          desc:
+            - "Each entry is a separate paragraph."
+            - "To line break,<br>use the br html tag."
+```
 
 ## Development
 
@@ -21,6 +41,9 @@ npm run dev
 
 # build for production
 npm run build
+
+# lint typescript files
+npm run lint
 ```
 
 ### Angular CLI

@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+.section__heading {
+  cursor: pointer;
+  display: inline-block;
+}
+.section__heading:hover {
+  color: #777;
+}

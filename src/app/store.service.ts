@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as YAML from 'yamljs';
 
-import { Store } from './store';
-import { Sheet } from './sheet/sheet';
+import { Store, Sheet, Section, Spell } from './store';
 import * as sample from 'raw-loader!./sample.candle.yaml';
 
 @Injectable()
@@ -57,7 +56,7 @@ export class StoreService {
     }
   }
   // Utilities
-  private genHash (length) : string {
+  private genHash (length:number) : string {
     let temp = '';
     for (let i = 0; i <= length / 8; i++) {
       temp += Math.random().toString(36).padEnd(8,'0').substr(-8);

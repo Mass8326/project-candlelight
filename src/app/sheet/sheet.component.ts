@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Store } from '../store';
-import { Sheet } from './sheet';
+import { Store, Sheet } from '../store';
 import { StoreService } from '../store.service';
 
 @Component({
   selector: 'app-sheet',
+  styleUrls: ['./sheet.component.css'],
   templateUrl: './sheet.component.html',
 })
 export class SheetComponent implements OnInit {
