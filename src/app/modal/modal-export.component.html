@@ -1,0 +1,12 @@
+<label>
+  <h2>Format</h2>
+  <select class="modal__input" [formControl]="format">
+    <option *ngFor="let option of formatOptions" [ngValue]="option">
+      {{ this.formatInfo[option].name }}
+    </option>
+  </select>
+  <p class="modal__desc">
+    {{ this.formatInfo[format.value].desc }}
+  </p>
+</label>
+<button class="modal__submit" (click)="onExport()">Export</button>

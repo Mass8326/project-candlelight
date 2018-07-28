@@ -3,34 +3,13 @@
 *ngIf="!isMode('none')"
 (click)="setMode('none')"></div>
 <!-- Export mode -->
-<div class="modal__window"
-*ngIf="isMode('export')">
+<div class="modal__window" *ngIf="isMode('export')">
   <h1 class="modal__title">Export Settings</h1>
   <div class="modal__controls">
     <img class="button" src="./assets/button.close.svg" alt="[Close]"
     (click)="setMode('none')"/>
   </div>
-  <form (ngSubmit)="onExport()" #exportForm="ngForm">
-    <label>
-      <h2>Format</h2>
-      <!-- exportSettings.format = exportSettings.formatOptions:selected -->
-      <select class="modal__input"
-      [(ngModel)]="exportSettings.format" name="format">
-        <!-- for each of exportSettings.formatOptions -->
-        <option *ngFor="let format of exportSettings.formatOptions"
-        [value]="format">
-          <!-- name of exportSettings.formatInfo[ exportSettings.format ] -->
-          {{ exportSettings.formatInfo[format].name }}
-        </option>
-      </select>
-      <!-- desc of exportSettings.formatInfo[ exportSettings.format ] -->
-      <p class="modal__desc">
-        {{ exportSettings.formatInfo[exportSettings.format].desc }}
-      </p>
-    </label>
-    <!-- why is angular so unreadable send help -->
-    <button type="submit" class="modal__submit">Export</button>
-  </form>
+  <app-modal-export></app-modal-export>
 </div>
 <!-- Warn mode -->
 <div class="modal__window"

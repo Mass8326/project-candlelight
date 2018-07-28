@@ -28,8 +28,8 @@ export class StoreService {
       { ext = results[1]; }         // set ext to [ext]
     else
       { ext = filename; }           // else use entire filename
-    let parsed:Store;
     // Parse according to file extension
+    let parsed:Store;
     if (ext === 'json')
       { parsed = JSON.parse(data); }
     else if (ext === 'yaml' || ext === 'yml')
@@ -58,7 +58,9 @@ export class StoreService {
   // Utilities
   private genHash (length:number) : string {
     let temp = '';
-    for (let i = 0; i <= length / 8; i++) {
+    for (let i = 0; i < Math.ceil(length / 8); i++) {
+      // Generate random number, convert to base-36, pad end with zeros, take
+      // last eight characters, and add to end of temp string
       temp += Math.random().toString(36).padEnd(8,'0').substr(-8);
     }
     return temp.substr(-length);

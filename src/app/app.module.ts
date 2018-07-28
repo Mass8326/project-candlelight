@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SheetComponent } from './sheet/sheet.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalExportComponent } from './modal/modal-export.component';
 import { SearchComponent } from './search/search.component';
 import { SectionComponent } from './section/section.component';
 import { SpellComponent } from './spell/spell.component';
@@ -17,6 +18,7 @@ import { StoreService } from './store.service';
   declarations: [
     SheetComponent,
     ModalComponent,
+    ModalExportComponent,
     SearchComponent,
     SectionComponent,
     SpellComponent,

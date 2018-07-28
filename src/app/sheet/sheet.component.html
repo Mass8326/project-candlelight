@@ -1,4 +1,5 @@
 <div class="sheet__main">
+  <app-modal class="modal" [(mode)]="mode"></app-modal>
   <h1 class="sheet__title">{{ sheet.title }}</h1>
   <div class="sheet__controls">
     <img class="button" src="./assets/button.export.svg" alt="[Export]"
@@ -13,7 +14,6 @@
   [(section)]="sheet.sections[i]"
   [secFirst]="secFirst"
   ></app-section>
-  <app-modal class="modal" [(mode)]="mode"></app-modal>
 </div>
 <div class="sheet__footer">
   Icons used are from <a href="https://icons8.com/">Icons8</a>.
