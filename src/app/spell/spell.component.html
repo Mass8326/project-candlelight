@@ -1,5 +1,5 @@
 <div class="spell__label"
-(click)="expanded = !expanded"
+(click)="onExpand()"
 >
   <span class="spell__name">{{ spell.name }}</span>
   <span class="spell__memo" *ngIf="spell.memo">({{ spell.memo }})</span>
@@ -9,7 +9,7 @@
   (click)="onEdit()"
   />
 </div>
-<div class="spell__expand" [attr.expanded]="expanded ? '' : null">
+<div class="spell__expand" [@expanded]="expanded">
   <div class="spell__info">
     <p
     *ngFor="let paragraph of spell.info"

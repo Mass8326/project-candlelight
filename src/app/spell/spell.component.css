@@ -24,13 +24,7 @@
   display: inline-block;
 }
 .spell__expand {
-  max-height: 0;
   overflow: hidden;
-  margin: 0 0 .5em;
-}
-.spell__expand[expanded] {
-  max-height: 10em;
-  margin: 0 0 .5em;
 }
 .spell__expand::after { /* Clearfix */
   content: "";

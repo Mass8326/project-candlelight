@@ -9,8 +9,9 @@
     />
   </div>
   <app-section class="section"
-  *ngFor="let el of sheet.sections; index as i"
+  *ngFor="let el of sheet.sections; index as i; first as secFirst"
   [(section)]="sheet.sections[i]"
+  [secFirst]="secFirst"
   ></app-section>
   <app-modal class="modal" [(mode)]="mode"></app-modal>
 </div>

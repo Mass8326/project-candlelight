@@ -10,6 +10,7 @@ import { Section } from '../store';
 export class SectionComponent implements OnInit {
   // Instance variables
   @Input() section:Section;
+  @Input() secFirst:boolean;
   @Output() sectionChange = new EventEmitter<Section>();
   public expanded = true;
   // Dependency injection
