@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
     YAML.parse(spellRaw).forEach((data) => {
       this.spellDictMap.set(this.genHash(8), data);
     });
-    // Populate spellDictArr from spellDictMap
+    // Populate spellDictArr from spellDictMap, JsSearch needs an array
     this.spellDictArr = Array.from(this.spellDictMap).map(
       // Add aliases using getters for better readability
       spell => Object.assign({
@@ -54,9 +54,10 @@ export class SearchComponent implements OnInit {
     this.searchResults = this.search.search(e.target.value);
   }
   public onAdd () : void {
-    alert('Placeholder - Add '
-    + this.spellDictMap.get(this.searchForm.value.select).name
-    + ' to ' + this.storeService.getById(this.id).heading);
+    this.storeService.addSpell(
+      this.spellDictMap.get(this.searchForm.value.select),
+      this.id
+    );
   }
   // Utilities
   private genHash (length) : string {

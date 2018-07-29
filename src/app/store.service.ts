@@ -8,7 +8,7 @@ import * as sample from 'raw-loader!./sample.candle.yaml';
 export class StoreService {
   // Instance variables
   private store:Store;
-  private storeDict = new Map<string, any>();
+  private storeDict = new Map<string, any>(); // references to store (not value)
   // Initialization
   public constructor () {
     this.setData(sample as any as string, 'yaml');
@@ -54,6 +54,9 @@ export class StoreService {
       alert('An error has occured when updating data.'
         + 'Is the proper file extension being used?');
     }
+  }
+  public addSpell (spell:Spell, sectionId:string) : void {
+    this.storeDict.get(sectionId).spells.push(spell);
   }
   // Utilities
   private genHash (length:number) : string {
