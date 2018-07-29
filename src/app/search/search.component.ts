@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as YAML from 'yamljs';
 import * as JsSearch from 'js-search';
 
+import { Spell } from '../store';
 import { EventService } from '../event.service';
 import { StoreService } from '../store.service';
 import * as spellRaw from 'raw-loader!../spells.yaml';
@@ -58,8 +59,14 @@ export class SearchComponent implements OnInit {
     this.searchResults = this.search.search(e.target.value);
   }
   public onAdd () : void {
+    // Make new reference, so that any changes are separate from spell dict
+    const spell = {} as Spell;
+    Object.assign(spell, this.spellDictMap.get(this.searchForm.value.select));
+    // Remove any spell id that have been copied from dictionary
+    delete spell.id;
+    // Emit event
     this.eventService.addSpell({
-      spell: this.spellDictMap.get(this.searchForm.value.select),
+      spell: spell,
       sectionId: this.sectionId,
     });
   }

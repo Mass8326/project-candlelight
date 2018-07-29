@@ -19,6 +19,8 @@
   margin: auto;
   background-color: #FFF;
   box-shadow: 0 0 1rem .5rem #0003;
+  max-height: 65%;
+  overflow-y: auto;
 }
 
 .modal__title {
@@ -31,12 +33,44 @@
   height: 2em;
 }
 
+/*
+  There's going to be three types of inputs
+  - block
+  - inline (flex)
+  - multiline
+  At most, there will be three parts to each
+  - label
+  - input
+  - desc/hint
+*/
+
+.modal__label {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.modal__label--flex {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 .modal__input {
   font-size: 1em;
   display: block;
   padding: .25em;
   width: 100%;
   margin: .5em 0;
+  overflow: hidden;
+}
+.modal__input--flex {
+  width: auto;
+  flex-grow: 1;
+  margin-left: .5em;
+}
+textarea.modal__input {
+  height: 10em;
+  resize: vertical;
 }
 
 .modal__submit {

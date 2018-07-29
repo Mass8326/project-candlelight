@@ -10,9 +10,10 @@ export class StoreService {
   // Instance variables
   private store:Store;
   private storeDict = new Map<string, any>(); // references to store (not value)
-  // Initialization
+  // Dependency injection + initialization
   public constructor (private eventService:EventService) {
     eventService.spellAdd.subscribe(data => this.addSpell(data));
+    eventService.spellEdit.subscribe(data => this.editSpell(data));
     this.setData(sampleData as any as string, 'yaml');
   }
   // Getters and setters
@@ -57,8 +58,22 @@ export class StoreService {
         + 'Is the proper file extension being used?');
     }
   }
-  public addSpell (data:{spell:Spell,id:string}) : void {
+  public addSpell (data:{spell:Spell,sectionId:string}) : void {
+    // Add unique spell id
+    data.spell.id = this.genHash(8);
+    // Insert spell into section
     this.storeDict.get(data.sectionId).spells.push(data.spell);
+    // Register spell into dictionary
+    this.storeDict.set(data.spell.id, data.spell);
+    console.log('After additon');
+    console.log(data.spell);
+    console.log(data.spell.id);
+  }
+  public editSpell (data:{spell:Spell,spellId:string}) : void {
+    const spell = this.storeDict.get(data.spellId);
+    // Edit current reference rather than replacing it with a new reference
+    // This ensures the dictionary always refers to the store
+    Object.assign(spell, data.spell);
   }
   // Utilities
   private genHash (length:number) : string {

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import { Spell } from '../store';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-spell',
@@ -22,7 +23,7 @@ export class SpellComponent implements OnInit {
   @Output() spellChange = new EventEmitter<Spell>();
   public expanded = '0';
   // Dependency injection
-  public constructor () { }
+  public constructor (private eventService:EventService) { }
   // Initialization
   public ngOnInit () : void { }
   // Event handlers
@@ -31,8 +32,9 @@ export class SpellComponent implements OnInit {
     else { this.expanded = '1'; }
   }
   public onEdit () : void {
-    alert('In-app editing is not yet implemented.\n\n'
-    + 'Please export, edit, then import your data using the buttons at '
-    + 'the top right of the sheet.');
+    this.eventService.editSpell({
+      spell: this.spell,
+      spellId: this.spell.id,
+    });
   }
 }

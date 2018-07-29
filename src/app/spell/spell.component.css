@@ -20,7 +20,7 @@
 .spell__label:hover .spell__memo {
   color: #333;
 }
-.spell:hover .spell__controls {
+:host:hover .spell__controls {
   display: inline-block;
 }
 .spell__expand {

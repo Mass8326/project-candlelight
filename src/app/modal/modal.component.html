@@ -11,6 +11,15 @@
   </div>
   <app-modal-export></app-modal-export>
 </div>
+<!-- Edit mode -->
+<div class="modal__window" *ngIf="isMode('edit')">
+  <h1 class="modal__title">Edit</h1>
+  <div class="modal__controls">
+    <img class="button" src="./assets/button.close.svg" alt="[Close]"
+    (click)="setMode('none')"/>
+  </div>
+  <app-modal-edit [editProps]="editProps"></app-modal-edit>
+</div>
 <!-- Warn mode -->
 <div class="modal__window"
 *ngIf="isMode('welcome')">
