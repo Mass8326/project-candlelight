@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Store, Sheet } from '../store';
+import { EventService } from '../event.service';
 import { StoreService } from '../store.service';
 
 @Component({
@@ -11,14 +12,19 @@ import { StoreService } from '../store.service';
 export class SheetComponent implements OnInit {
   // Instance variables
   public sheet:Sheet;
-  public mode = 'welcome';
   // Dependency injection
-  public constructor ( private storeService:StoreService ) { }
+  public constructor (
+    private eventService:EventService,
+    private storeService:StoreService,
+  ) { }
   // Initialization
   public ngOnInit () : void {
     this.sheet = this.storeService.getSheet();
   }
   // Event handlers
+  public onExport () {
+    this.eventService.changeMode('export');
+  }
   public onImport () : void {
     // Remove any hanging temporary elements
     const old = document.getElementById('import-proxy');

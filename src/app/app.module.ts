@@ -9,6 +9,7 @@ import { ModalExportComponent } from './modal/modal-export.component';
 import { SearchComponent } from './search/search.component';
 import { SectionComponent } from './section/section.component';
 import { SpellComponent } from './spell/spell.component';
+import { EventService } from './event.service';
 import { StoreService } from './store.service';
 
 // This decorator defines the following class as an Angular module
@@ -34,6 +35,7 @@ import { StoreService } from './store.service';
   // Registers them in the dependency injector
   // Maintains a single instance for all child components
   providers: [
+    EventService,
     StoreService,
   ],
   // Root component

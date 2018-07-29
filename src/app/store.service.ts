@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import * as YAML from 'yamljs';
 
 import { Store, Sheet, Section, Spell } from './store';
-import * as sample from 'raw-loader!./sample.candle.yaml';
+import { EventService } from './event.service';
+import * as sampleData from 'raw-loader!./sample.candle.yaml';
 
 @Injectable()
 export class StoreService {
@@ -10,8 +11,9 @@ export class StoreService {
   private store:Store;
   private storeDict = new Map<string, any>(); // references to store (not value)
   // Initialization
-  public constructor () {
-    this.setData(sample as any as string, 'yaml');
+  public constructor (private eventService:EventService) {
+    eventService.spellAdd.subscribe(data => this.addSpell(data));
+    this.setData(sampleData as any as string, 'yaml');
   }
   // Getters and setters
   public getSheet () : Sheet {
@@ -55,8 +57,8 @@ export class StoreService {
         + 'Is the proper file extension being used?');
     }
   }
-  public addSpell (spell:Spell, sectionId:string) : void {
-    this.storeDict.get(sectionId).spells.push(spell);
+  public addSpell (data:{spell:Spell,id:string}) : void {
+    this.storeDict.get(data.sectionId).spells.push(data.spell);
   }
   // Utilities
   private genHash (length:number) : string {

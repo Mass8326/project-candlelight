@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import * as YAML from 'yamljs';
 
 import { Store } from '../store';
+import { EventService } from '../event.service';
 import { StoreService } from '../store.service';
 
 @Component({
@@ -12,8 +13,7 @@ import { StoreService } from '../store.service';
 })
 export class ModalComponent implements OnInit {
   // Instance variables
-  @Input() mode:string;
-  @Output() modeChange = new EventEmitter<string>();
+  private mode = 'welcome';
   public formatInfo = {
     yaml: {name: 'YAML', desc: 'Readable and editable'},
     json: {name: 'JSON', desc: 'Smaller file size'},
@@ -21,7 +21,12 @@ export class ModalComponent implements OnInit {
   public formatOptions = Object.keys(this.formatInfo);
   public format = new FormControl(this.formatOptions[0]);
   // Dependency injection
-  public constructor ( private storeService:StoreService ) { }
+  public constructor (
+    private eventService:EventService,
+    private storeService:StoreService,
+  ) {
+    eventService.modeChange.subscribe(newMode => this.setMode(newMode));
+  }
   // Initialization
   public ngOnInit () : void { }
   // Getters and setters
@@ -30,6 +35,5 @@ export class ModalComponent implements OnInit {
   }
   public setMode (newMode:string) : void {
     this.mode = newMode;
-    this.modeChange.emit(this.mode);
   }
 }

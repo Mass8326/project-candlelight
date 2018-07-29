@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import * as YAML from 'yamljs';
 import * as JsSearch from 'js-search';
 
+import { EventService } from '../event.service';
 import { StoreService } from '../store.service';
 import * as spellRaw from 'raw-loader!../spells.yaml';
 
@@ -13,7 +14,7 @@ import * as spellRaw from 'raw-loader!../spells.yaml';
 })
 export class SearchComponent implements OnInit {
   // Instance variables
-  @Input() id;
+  @Input() sectionId;
   public searchForm = new FormGroup({
     input: new FormControl(),
     select: new FormControl('', Validators.required),
@@ -23,7 +24,10 @@ export class SearchComponent implements OnInit {
   public spellDictMap = new Map<string, any>();
   public spellDictArr = new Array<[string, any]>() as any;
   // Dependencies
-  public constructor ( private storeService:StoreService ) { }
+  public constructor (
+    private storeService:StoreService,
+    private eventService:EventService,
+  ) { }
   // Initialization
   public ngOnInit () : void {
     // Populate spellDictMap
@@ -54,10 +58,10 @@ export class SearchComponent implements OnInit {
     this.searchResults = this.search.search(e.target.value);
   }
   public onAdd () : void {
-    this.storeService.addSpell(
-      this.spellDictMap.get(this.searchForm.value.select),
-      this.id
-    );
+    this.eventService.addSpell({
+      spell: this.spellDictMap.get(this.searchForm.value.select),
+      sectionId: this.sectionId,
+    });
   }
   // Utilities
   private genHash (length) : string {
