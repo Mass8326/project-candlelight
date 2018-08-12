@@ -1,13 +1,20 @@
 <div class="sheet__main">
   <app-modal class="modal"></app-modal>
-  <h1 class="sheet__title">{{ sheet.title }}</h1>
-  <div class="sheet__controls">
-    <img class="button" src="./assets/button.export.svg" alt="[Export]"
-    (click)="onExport()"
-    />
-    <img class="button" src="./assets/button.import.svg" alt="[Import]"
-    (click)="onImport()"
-    />
+  <div class="sheet__header">
+    <h1 class="sheet__title">{{ sheet.title }}</h1>
+    <div class="sheet__controls sheet__controls--small">
+      <img class="button" src="./assets/button.edit.svg" alt="[Rename]"
+      (click)="onRename()"
+      />
+    </div>
+    <div class="sheet__controls sheet__controls--right">
+      <img class="button" src="./assets/button.export.svg" alt="[Export]"
+      (click)="onExport()"
+      />
+      <img class="button" src="./assets/button.import.svg" alt="[Import]"
+      (click)="onImport()"
+      />
+    </div>
   </div>
   <app-section class="section"
   *ngFor="let el of sheet.sections; index as i; first as secFirst"

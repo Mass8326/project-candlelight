@@ -25,6 +25,9 @@ export class SheetComponent implements OnInit {
   public onExport () {
     this.eventService.changeMode('export');
   }
+  public onRename () {
+    this.eventService.changeMode('rename');
+  }
   public onImport () : void {
     // Remove any hanging temporary elements
     const old = document.getElementById('import-proxy');

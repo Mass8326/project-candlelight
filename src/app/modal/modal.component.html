@@ -20,6 +20,15 @@
   </div>
   <app-modal-edit [editProps]="editProps"></app-modal-edit>
 </div>
+<!-- Rename mode -->
+<div class="modal__window" *ngIf="isMode('rename')">
+  <h1 class="modal__title">Rename</h1>
+  <div class="modal__controls">
+    <img class="button" src="./assets/button.close.svg" alt="[Close]"
+    (click)="setMode('none')"/>
+  </div>
+  <app-modal-rename></app-modal-rename>
+</div>
 <!-- Warn mode -->
 <div class="modal__window"
 *ngIf="isMode('welcome')">

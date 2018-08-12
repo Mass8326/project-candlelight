@@ -6,6 +6,7 @@ import { Store, Sheet, Section, Spell } from './store';
 export class EventService {
   // Events
   public modeChange = new EventEmitter<string>();
+  public sheetRename = new EventEmitter();
   public spellAdd = new EventEmitter<{spell:Spell,sectionId:string}>();
   public spellEdit = new EventEmitter<{spell:Spell,spellId:string}>();
 
@@ -17,6 +18,10 @@ export class EventService {
   // @param mode:String - describes the new mode
   public changeMode (mode:string) {
     this.modeChange.emit(mode);
+  }
+  // This event is used to rename the sheet
+  public renameSheet (name:string) {
+    this.sheetRename.emit(name);
   }
   // This event is used to add a spell to a section
   // @param data.spell:Spell - contains the new spell

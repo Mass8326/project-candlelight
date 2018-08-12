@@ -7,6 +7,7 @@ import { SheetComponent } from './sheet/sheet.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModalEditComponent } from './modal/modal-edit.component';
 import { ModalExportComponent } from './modal/modal-export.component';
+import { ModalRenameComponent } from './modal/modal-rename.component';
 import { SearchComponent } from './search/search.component';
 import { SectionComponent } from './section/section.component';
 import { SpellComponent } from './spell/spell.component';
@@ -22,6 +23,7 @@ import { StoreService } from './store.service';
     ModalComponent,
     ModalEditComponent,
     ModalExportComponent,
+    ModalRenameComponent,
     SearchComponent,
     SectionComponent,
     SpellComponent,

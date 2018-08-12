@@ -14,5 +14,16 @@
 .sheet__controls {
   height: 2em;
   display: inline-block;
+}
+.sheet__controls--small {
+  height: 2.4em;
+  padding: .4em 0;
+  vertical-align: top;
+  display: none;
+}
+.sheet__header:hover .sheet__controls--small {
+  display: inline-block;
+}
+.sheet__controls--right {
   float: right;
 }
