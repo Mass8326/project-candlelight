@@ -2,7 +2,7 @@
 (ngSubmit)="onExit()">
   <label class="modal__label modal__label--flex">
     <span>Name:</span>
-    <input class="modal__input modal__input--flex" formControlName="name"
+    <input #first class="modal__input modal__input--flex" formControlName="name"
     (input)="onSave()">
   </label>
   <label class="modal__label modal__label--flex">
@@ -20,6 +20,6 @@
     <textarea class="modal__input" formControlName="desc"
     (input)="onSave()"></textarea>
   </label>
-  <button class="modal__submit" type="submit"
+  <button #last class="modal__submit" type="submit"
   [attr.disabled]="spellForm.status == 'INVALID' ? '' : null">Save</button>
 </form>
