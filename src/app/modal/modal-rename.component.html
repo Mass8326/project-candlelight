@@ -1,7 +1,9 @@
-<label class="modal__label modal__label--flex">
-  <span>Name:</span>
-  <input class="modal__input modal__input--flex" [formControl]="nameForm">
-</label>
-<button class="modal__submit" type="submit"
-[attr.disabled]="nameForm.status == 'INVALID' ? '' : null"
-(click)="onSubmit()">Save</button>
+<form>
+  <label class="modal__label modal__label--flex">
+    <span>Name:</span>
+    <input #focus class="modal__input modal__input--flex" [formControl]="nameForm" onfocus="this.select()">
+  </label>
+  <button class="modal__submit" type="submit"
+  [attr.disabled]="nameForm.status == 'INVALID' ? '' : null"
+  (click)="onSubmit()">Save</button>
+</form>

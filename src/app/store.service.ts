@@ -14,15 +14,18 @@ export class StoreService {
   public constructor (private eventService:EventService) {
     eventService.spellAdd.subscribe(data => this.addSpell(data));
     eventService.spellEdit.subscribe(data => this.editSpell(data));
-    eventService.sheetRename.subscribe(name => this.renameSheet(name));
+    eventService.sheetRename.subscribe(name => this.setSheetName(name));
     this.setData(sampleData as any as string, 'yaml');
   }
   // Getters and setters
   public getSheet () : Sheet {
     return this.store.sheet;
   }
-  public renameSheet (name:string) : void {
+  public setSheetName (name:string) : void {
     this.store.sheet.title = name;
+  }
+  public getSheetName () : string {
+    return this.store.sheet.title;
   }
   public getData () : Store {
     return this.store;
